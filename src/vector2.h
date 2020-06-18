@@ -1,0 +1,21 @@
+#pragma once
+
+#include<iostream>
+
+	class Vector2 {
+	private:
+	public:
+		double x, y;
+		Vector2();
+		Vector2(double a, double b);
+		friend std::ostream& operator<<(std::ostream& out, Vector2 other);
+		float magnitude();
+		void operator=(Vector2 other);
+		Vector2 operator+(Vector2 other);
+		Vector2 operator-(Vector2 other);
+		Vector2 operator*(float f);
+		Vector2 operator/(float f);
+		static float dot(Vector2& a, Vector2& b);
+		static float cross(Vector2& a, Vector2& b);
+		static Vector2 normalize(Vector2& a);
+	};
