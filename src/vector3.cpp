@@ -9,7 +9,7 @@
 		Vector3::Vector3(double x, double y, double z)
 			: x(x), y(y), z(z) {}
 
-		float Vector3::magnitude() {
+		double Vector3::magnitude() {
 			return sqrt(x * x + y * y + z*z);
 		}
 
@@ -26,14 +26,14 @@
 		Vector3 Vector3::operator-(Vector3 other) {
 			return Vector3(x - other.x, y - other.y, z - other.z);
 		}
-		Vector3 Vector3::operator*(float f) {
+		Vector3 Vector3::operator*(double f) {
 			return Vector3(f * x, f * y, f * z);
 		}
-		Vector3 Vector3::operator/(float f) {
+		Vector3 Vector3::operator/(double f) {
 			return Vector3(x / f, y / f, z / f);
 		}
 
-		float Vector3::dot(Vector3& a, Vector3& b) {
+		double Vector3::dot(Vector3& a, Vector3& b) {
 			return (a.x * b.x + a.y * b.y + a.z * b.z);
 		}
 
@@ -42,6 +42,7 @@
 
 		}
 		Vector3 Vector3::normalize(Vector3& a) {
+			if (a.x == 0 && a.y == 0 && a.z == 0) return a;
 			return Vector3(a.x / sqrt(a.x * a.x + a.y * a.y + a.z * a.z), a.y / sqrt(a.x * a.x + a.y * a.y + a.z * a.z), a.z / sqrt(a.x * a.x + a.y * a.y + a.z * a.z));
 		}
 
