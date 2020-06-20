@@ -42,6 +42,7 @@
 
 		}
 		Vector3 Vector3::normalize(Vector3& a) {
+			if (a.x == 0 && a.y == 0 && a.z == 0) return a;
 			return Vector3(a.x / sqrt(a.x * a.x + a.y * a.y + a.z * a.z), a.y / sqrt(a.x * a.x + a.y * a.y + a.z * a.z), a.z / sqrt(a.x * a.x + a.y * a.y + a.z * a.z));
 		}
 
