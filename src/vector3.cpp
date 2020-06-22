@@ -49,6 +49,6 @@
 
 
 	std::ostream& operator <<(std::ostream& out, Vector3 other) {
-		out << "(" << other.x << ", " << other.y << ", " << other.z << ")";
+		out << other.x <<" "<< other.y << " " << other.z ;
 		return out;
 	}
